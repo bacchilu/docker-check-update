@@ -1,14 +1,9 @@
 import json
 from dataclasses import dataclass
-from typing import Any
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
-type Json = dict[str, Any]
-
-
-class DockerHubError(Exception):
-    pass
+from service import DockerHubAPIProtocol, DockerHubError, Json
 
 
 @dataclass(frozen=True)
@@ -25,7 +20,7 @@ class ImageName:
         return ImageName(namespace=namespace, repository=repository)
 
 
-class DockerHubAPI:
+class DockerHubAPI(DockerHubAPIProtocol):
     @staticmethod
     def _http_get(url: str, resource: str) -> Json:
         try:

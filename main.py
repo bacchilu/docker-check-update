@@ -1,7 +1,11 @@
 from typing import Iterator
 
-from docker_hub import DockerHubError
-from service import ImageReference, check_if_latest, find_by_digest
+from docker_hub import DockerHubAPI
+from service import DockerHubError, DockerImageUpdateService, ImageReference
+
+docker_image_update_service: DockerImageUpdateService = DockerImageUpdateService(
+    DockerHubAPI()
+)
 
 
 def iterate_images(filename: str) -> Iterator[ImageReference]:
@@ -19,11 +23,13 @@ if __name__ == "__main__":
     for image_ref in iterate_images("images.txt"):
         suggested_latest: str = ""
         try:
-            is_latest: bool = check_if_latest(image_ref)
+            is_latest: bool = docker_image_update_service.check_if_latest(image_ref)
             error: str = ""
 
             if not is_latest:
-                candidates: set[str] = find_by_digest(image_ref.name)
+                candidates: set[str] = docker_image_update_service.find_by_digest(
+                    image_ref.name
+                )
                 suggested_latest = f"{candidates}"
 
         except DockerHubError as exc:
