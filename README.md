@@ -1,4 +1,4 @@
-# docker-updater
+# Docker Check Updates
 
 Small Python CLI that reads Docker image references from `images.txt`, checks whether each pinned tag still matches Docker Hub's `latest`, and tries to suggest an updated tag when it does not.
 
