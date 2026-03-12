@@ -25,13 +25,13 @@ def main(filename: str = "images.txt") -> None:
         try:
             is_latest: bool = docker_image_update_service.check_if_latest(image_ref)
             error: str = ""
-
             if not is_latest:
-                candidates: set[str] = docker_image_update_service.find_by_digest(
-                    image_ref.name
+                candidates: set[str] = (
+                    docker_image_update_service.find_latests_tags_by_digest(
+                        image_ref.name
+                    )
                 )
                 suggested_latest = f"{candidates}"
-
         except DockerHubError as exc:
             is_latest, error = False, str(exc)
         except ValueError as exc:
