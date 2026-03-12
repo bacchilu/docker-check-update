@@ -36,12 +36,27 @@ This means the suggestion is based on what Docker Hub currently publishes, not o
 
 No Docker daemon is required because the script only uses the Docker Hub HTTP API.
 
+## Project layout
+
+The Python code lives in the `docker_check_updates/` package:
+
+```text
+docker_check_updates/
+  __init__.py
+  __main__.py
+  main.py
+  service.py
+  docker_hub.py
+```
+
+`images.txt` stays at the repository root as the default input file.
+
 ## Usage
 
-Run the checker with:
+Run the checker from the repository root with:
 
 ```bash
-python3 main.py
+python3 -m docker_check_updates
 ```
 
 ## Input format

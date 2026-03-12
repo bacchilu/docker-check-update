@@ -1,7 +1,7 @@
 from typing import Iterator
 
-from docker_hub import DockerHubAPI
-from service import DockerHubError, DockerImageUpdateService, ImageReference
+from .docker_hub import DockerHubAPI
+from .service import DockerHubError, DockerImageUpdateService, ImageReference
 
 docker_image_update_service: DockerImageUpdateService = DockerImageUpdateService(
     DockerHubAPI()
@@ -19,8 +19,8 @@ def iterate_images(filename: str) -> Iterator[ImageReference]:
                 raise ValueError(f"Malformed line in {filename!r}: {line!r}") from exc
 
 
-if __name__ == "__main__":
-    for image_ref in iterate_images("images.txt"):
+def main(filename: str = "images.txt") -> None:
+    for image_ref in iterate_images(filename):
         suggested_latest: str = ""
         try:
             is_latest: bool = docker_image_update_service.check_if_latest(image_ref)

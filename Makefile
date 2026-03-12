@@ -1,4 +1,4 @@
-.PHONY: clean codex
+.PHONY: clean codex run
 
 clean:
 	find . -name "*.pyc" -delete
@@ -8,3 +8,6 @@ codex:
 	npm install @openai/codex --save-dev
 	rm package.json package-lock.json
 	npx codex
+
+run:
+	python3 -m docker_check_updates

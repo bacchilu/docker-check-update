@@ -3,7 +3,7 @@ from dataclasses import dataclass
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
-from service import DockerHubAPIProtocol, DockerHubError, Json
+from .service import DockerHubAPIProtocol, DockerHubError, Json
 
 
 @dataclass(frozen=True)
