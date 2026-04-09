@@ -1,4 +1,4 @@
-python:3.14.3
+python:3.14.4
 node:25.9.0
 rabbitmq:4.2.5
 nginx:1.29.8
