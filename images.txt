@@ -7,4 +7,4 @@ bacchilu/static-server:3.0.9
 bacchilu/pdf-generator:4.3.1
 opensearchproject/opensearch:3.6.0
 composer:2.9.5
-dunglas/frankenphp:1.12.1-php8
+dunglas/frankenphp:1.12.2-php8
