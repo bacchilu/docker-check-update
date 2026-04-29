@@ -4,7 +4,7 @@ rabbitmq:4.3.0
 nginx:1.29.8
 caddy:2.11.2
 bacchilu/static-server:3.0.9
-bacchilu/pdf-generator:4.3.6
+bacchilu/pdf-generator:4.3.7
 opensearchproject/opensearch:3.6.0
 composer:2.9.7
 dunglas/frankenphp:1.12.2-php8
