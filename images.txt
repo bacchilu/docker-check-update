@@ -1,5 +1,5 @@
 python:3.14.4
-node:25.9.0
+node:26.0.0
 rabbitmq:4.3.0
 nginx:1.29.8
 caddy:2.11.2
