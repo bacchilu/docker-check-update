@@ -1,6 +1,6 @@
 python:3.14.5
 node:26.2.0
-rabbitmq:4.3.0
+rabbitmq:4.3.1
 nginx:1.31.1
 caddy:2.11.3
 bacchilu/static-server:3.0.9
