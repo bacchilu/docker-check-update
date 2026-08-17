@@ -1,10 +1,10 @@
-python:3.14.6
-node:26.5.1
+python:3.14.7
+node:26.7.0
 rabbitmq:4.3.4
 nginx:1.31.3
 caddy:2.11.4
 bacchilu/static-server:3.0.9
-bacchilu/pdf-generator:4.4.1
-opensearchproject/opensearch:3.7.0
+bacchilu/pdf-generator:4.4.2
+opensearchproject/opensearch:3.8.0
 composer:2.10.2
-dunglas/frankenphp:1.12.6-php8
+dunglas/frankenphp:1.12.7-builder-php8
