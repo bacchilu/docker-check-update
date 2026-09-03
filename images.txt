@@ -1,7 +1,7 @@
 python:3.14.7
 node:26.8.1
 rabbitmq:4.3.5
-nginx:1.31.4
+nginx:1.31.5
 caddy:2.11.4
 bacchilu/static-server:3.0.9
 bacchilu/pdf-generator:4.4.4
